@@ -105,3 +105,24 @@ func (v *Validation) chekIsUniq(fieldName, tableField, fildValue string) bool {
 	// ami@gmail
 	return res != fildValue
 }
+
+// func UniqUsername(usernames string) bool {
+// 	conn := db.CreateCon()
+
+// 	script := "SELECT username FROM users"
+
+// 	rows, err := conn.Query(script)
+// 	helper.PanicErr(err)
+// 	defer rows.Close()
+
+// 	for rows.Next() {
+// 		var username string
+// 		err := rows.Scan(&username)
+// 		helper.PanicErr(err)
+// 		if username == usernames {
+// 			return false
+// 		}
+// 	}
+
+// 	return true
+// }

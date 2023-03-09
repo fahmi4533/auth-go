@@ -139,57 +139,6 @@ func Register(w http.ResponseWriter, r *http.Request) {
 			Password:    r.Form.Get("password"),
 			Cpassword:   r.Form.Get("cpassword"),
 		}
-
-		// errorMassage := make(map[string]interface{})
-
-		// if user.UserName == "" {
-		// 	errorMassage["NamaLengkap"] = "Nama lengkap harus di isikan"
-		// }
-		// if user.UserName == "" {
-		// 	errorMassage["Email"] = "Email harus di isikan"
-		// }
-		// if user.UserName == "" {
-		// 	errorMassage["Username"] = "User Name harus di isikan"
-		// }
-		// if user.UserName == "" {
-		// 	errorMassage["Password"] = "Password harus di isikan"
-		// }
-		// if user.UserName == "" {
-		// 	errorMassage["cpassword"] = "konfirmasi pass harus di isikan"
-		// } else {
-		// 	if user.Cpassword != user.Password {
-		// 		errorMassage["Cpassword"] = "konfirmasi password tak cocok woi"
-		// 	}
-		// }
-		// if len(errorMassage) > 0 {
-		// 	// validasi form gagal
-		// 	data := map[string]interface{}{
-		// 		"validation": errorMassage,
-		// 	}
-		// 	temp, _ := template.ParseFiles("views/register.html")
-		// 	temp.Execute(w, data)
-		// } else {
-		// 	// hash password menggunakan bcrypt
-		// 	hashPasswor, _ := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
-		// 	user.Password = string(hashPasswor)
-
-		// 	// insert ke database
-		// 	_, err := usermodel.Create(user)
-
-		// 	message := ""
-		// 	if err != nil {
-		// 		message = "Register Gagal: " + message
-		// 	} else {
-		// 		message = "Registrasi berhasil login la cok"
-		// 	}
-
-		// 	data := map[string]interface{}{
-		// 		"pesan": message,
-		// 	}
-		// 	temp, _ := template.ParseFiles("views/register.html")
-		// 	temp.Execute(w, data)
-		// }
-		// kita melakukan validasi
 		vError := validation.Struct(user)
 
 		if vError != nil {
